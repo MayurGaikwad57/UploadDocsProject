@@ -53,4 +53,14 @@ export class UploadDocsComponent implements OnInit {
   removeDoc(index:any){
      
   }
+
+  // Very Imp Note when dealing with file uploads in Angular and using them in forms 
+  //  for setting validations on upload or filed or other thngs 
+/* The error message indicates that you are trying to programmatically set a value for an <input type="file"> element
+using setValue(). However, for security reasons, browsers do not allow setting the value of a file
+input field programmatically—except for setting it to an empty string ("").
+-------------------Issue that you will see..............................
+this.renewalTotFormGroup.controls['uploadToT'].setValue(documentName);
+the above is not allowed beacuse of the above note
+  */
 }
