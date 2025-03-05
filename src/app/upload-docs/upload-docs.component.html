@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+       <div class="col-md-6">
+        <div class="card shadow-lg mt-3">
+          <h3 class="text-center">Upload Supporting Docs</h3>
+          <p>Upload Docs Instructions:</p>
+          <ol>
+            <li>The Max Doc size should be </li>
+            <li>Supported File types are: </li>
+            <li>Max documents that can be attached are </li>
+          </ol>
+           <div class="upload_button d-flex justify-content-center mt-2 mb-2">
+             <button id="uploadDocs"  class="btn btn-primary p-1 d-flex"
+             (click)="onSupportDocsSelect()"
+             >
+                Upload Docs
+             </button>
+             <input type="file" #fileInput id="uploadDocs" name="fileUpload" (change)="onFileChange($event)">
+             <p *ngIf="errorMessage">{{errorMessage}}</p>
+           </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Size</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let file of userFile; let i = index">
+                            <td>{{file.name}}</td>
+                            <td>{{file.size/1e+6 | number:'1.2-2'}} MB</td>
+                            <td>{{file.type}}</td>
+                            <td><button class="btn btn-success p-1">Successfully Uploaded</button></td>
+                            <td (click)="removeDoc(i)" >Remove</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>

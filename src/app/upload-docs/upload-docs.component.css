@@ -1,0 +1,14 @@
+
+input{
+    display:none;
+}
+h3{
+    font-family: cursive;
+}
+.container{
+    background-color: rgb(171, 205, 239) !important;
+    height: 70vh !important;
+}
+.doc_details {
+    color:black;
+}

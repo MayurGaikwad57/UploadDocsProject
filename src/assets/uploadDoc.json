@@ -1,0 +1,9 @@
+{
+    "FILE_SIZE": 1e+7,
+    "ACCEPTED_FILE_TYPES" : [
+        ".pdf",
+        ".jpeg",
+        ".jpg"
+    ],
+    "MAX_DOC_UPLOAD": 3
+}
